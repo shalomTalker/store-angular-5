@@ -1,0 +1,30 @@
+.row {
+/*	height: 300px;*/
+	justify-content: center;
+}
+.row h2 {
+	width: 100%;
+    height: 40px;
+	text-align: center;
+}
+.hideBtn {
+	display: none;
+
+}
+app-purchased-list, app-product-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 3rem;
+	 
+}
+.show {
+	display: flex;
+
+}
+.hide {
+	display: none
+}
+app-purchased-list {
+	display: none;
+}

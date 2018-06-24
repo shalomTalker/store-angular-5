@@ -1,0 +1,25 @@
+<h1>{{title}}</h1>
+<section id="purchased_list" >
+	<h2>Purchased List: <span>{{purchasedList.length}} items</span></h2>
+	<button (click)="showList()" class="showBtn">show</button>
+	<button (click)="hideList()" class="hideBtn">Hide</button>
+	
+	<app-purchased-list 
+	class="row"
+	[purchasedList]="purchasedList"
+	(purchasedListMessenger)="onDelete($event)">
+	</app-purchased-list>
+	
+</section>
+
+<section id="product_list">
+	<h2>Product List: {{productList.length}} items</h2>
+	<app-product-list
+	class="row"
+	[products]="productList"
+	(productListMessenger)="onDelete($event)"
+	(productListAdd)="add($event)">
+
+	</app-product-list>
+	<!-- <button (click)="addProduct()">Add a task</button> -->
+</section>
