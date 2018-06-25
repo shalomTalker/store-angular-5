@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NO_ERRORS_SCHEMA } from '@angular/core'
-import { Event } from '@angular/router';
 
 import { AppComponent } from './components/app.component';
 import { ProductListComponent } from './components/product-list/product-list.component';

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Product } from '../models/Product';
-import { Event } from '@angular/router';
 // main component of app
 @Component({
 	selector: 'app-root',
@@ -26,17 +25,17 @@ export class AppComponent {
 						})
 	}
 	public onDelete(index: number): void {
-		var delTarget:Event=event;
-		console.log(event:Event)
-		// // switch (event.path[3].tagName) {
-		// 	case "APP-PRODUCT":
-		// 		this.productList.splice(index, 1);
-		// 		break;
+		// var delTarget:Event=event;
+		console.log(event.path)
+		switch (event.path[3].tagName) {
+			case "APP-PRODUCT":
+				this.productList.splice(index, 1);
+				break;
 			
-		// 	case "APP-PURCHASED":
-		// 		this.purchasedList.splice(index, 1);
-		// 		break;
-		// }
+			case "APP-PURCHASED":
+				this.purchasedList.splice(index, 1);
+				break;
+		}
 	}
 	public showList():any {
 		var el :HTMLElement = document.querySelector('app-purchased-list')
