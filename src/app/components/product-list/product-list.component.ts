@@ -18,18 +18,18 @@ import { Product } from '../../models/Product';
 export class ProductListComponent implements OnInit {
 // takes from [products]="productList"
 	@Input()
-	products: Product[]
+		products: Product[]
 
 	@Output()
-	productListMessenger: EventEmitter<number> = new EventEmitter()
-	@Output() productListAdd :EventEmitter<number> = new EventEmitter();
+		productListMessenger: EventEmitter<number> = new EventEmitter()
+	@Output() 
+		productListAdd :EventEmitter<number> = new EventEmitter();
 
 	public onDelete(index: number): void {
 		this.productListMessenger.emit(index);
 	}
 
 	public addProduct(index: number): void {
-			console.log(index)
 			this.productListAdd.emit(index);
 		}
 

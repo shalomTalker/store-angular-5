@@ -7,7 +7,7 @@ import { Product } from '../../models/Product';
 	<div>
 		<div class="header">
 			<h3>{{product.text}}</h3>
-			<button (click)="delete()">🗑</button>
+			<button (click)="delete($event)">🗑</button>
 		</div>
 		<img src="{{product.image}}" alt="{{product.text}}">
 		<div>
@@ -25,12 +25,11 @@ export class ProductComponent implements OnInit {
 	@Output() productMessenger :EventEmitter<number> = new EventEmitter(); 
 	@Output() productAdd :EventEmitter<number> = new EventEmitter(); 
 
-	public delete(): void {
-		console.log(this.index);
+	public delete(event): void {
+		console.log(this.index,event);
 		this.productMessenger.emit(this.index);
 	} 
 	public add(): void {
-		console.log(this.product)
 		this.productAdd.emit(this.index);
 	}
   constructor() { }

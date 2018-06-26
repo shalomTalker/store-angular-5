@@ -18,6 +18,9 @@ export class AppComponent {
 		{text: 'Scanner', price: 149.90 , image: '../../assets/img/Scanner.jpg'},
 		{text: 'Energy Drink', price: 4.90 , image: '../../assets/img/Energy Drink.jpg'},
 	];
+	
+	public clicked:boolean = false;
+
 	public addProduct():void {
 		this.productList.push({text:'New Product #' + (this.productList.length + 1), 
 							price: 99.90, 
@@ -25,9 +28,7 @@ export class AppComponent {
 						})
 	}
 	public onDelete(index: number): void {
-		// var delTarget:Event=event;
-		console.log(event.path)
-		switch (event.path[3].tagName) {
+		switch ((<any>event).target.offsetParent.nodeName) {
 			case "APP-PRODUCT":
 				this.productList.splice(index, 1);
 				break;
@@ -37,19 +38,22 @@ export class AppComponent {
 				break;
 		}
 	}
-	public showList():any {
-		var el :HTMLElement = document.querySelector('app-purchased-list')
-			el.className += ' show'; 
-			document.querySelector('.hideBtn').className = '';
-			document.querySelector('.showBtn').className = 'hideBtn';
+	public showList(): void {
+		this.clicked = !this.clicked;
 	}
-	public hideList() :any {
-		var el :HTMLElement = document.querySelector('app-purchased-list')
-			el.className = ''; 
-			document.querySelector('.hideBtn').className = 'showBtn';
-			document.querySelector('.showBtn').nextElementSibling.className = 'hideBtn';
+	// public showList():any {
+	// 	var el :HTMLElement = document.querySelector('app-purchased-list')
+	// 		el.className += ' show'; 
+	// 		document.querySelector('.hideBtn').className = '';
+	// 		document.querySelector('.showBtn').className = 'hideBtn';
+	// }
+	// public hideList() :any {
+	// 	var el :HTMLElement = document.querySelector('app-purchased-list')
+	// 		el.className = ''; 
+	// 		document.querySelector('.hideBtn').className = 'showBtn';
+	// 		document.querySelector('.showBtn').nextElementSibling.className = 'hideBtn';
 
-	}
+	// }
 	public add(index: number) :void {
 		var obj: Product = this.productList[index] 
 		this.purchasedList.push(obj);

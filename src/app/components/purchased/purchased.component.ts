@@ -8,7 +8,7 @@ import { Product } from '../../models/Product';
 	<div>
 		<div class="header">
 			<h3>{{purchased.text}}</h3>
-			<button (click)="delete()">🗑</button>
+			<button (click)="delete($event)">🗑</button>
 		</div>
 		<img src="{{purchased.image}}" alt="{{purchased.text}}">
 		<div>
@@ -25,7 +25,6 @@ export class PurchasedComponent implements OnInit {
 	@Output() purchasedMessenger :EventEmitter<number> = new EventEmitter();
 
 public delete():void {
-	console.log(this.index);
 	this.purchasedMessenger.emit(this.index);
 } 
   constructor() { }

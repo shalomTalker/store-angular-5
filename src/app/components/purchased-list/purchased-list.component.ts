@@ -5,16 +5,13 @@ import { Product } from '../../models/Product';
 @Component({
   selector: 'app-purchased-list',
   template:  `
-		
-			<app-purchased class="col-lg-3  col-md-5 col-sm-7" 
-				*ngFor="let purchased of purchasedList; index as i;"
-				[purchased]="purchased"
-				[index]="i"
-				(purchasedMessenger)="onDelete($event)"
-				
-				>
-			</app-purchased>
-		
+				<app-purchased class="col-lg-3  col-md-5 col-sm-7" 
+					*ngFor="let purchased of purchasedList; index as i;"
+					[purchased]="purchased"
+					[index]="i"
+					(purchasedMessenger)="onDelete($event)"
+					>
+				</app-purchased>
 	`,
   styleUrls: ['./purchased-list.component.css']
 })
@@ -27,7 +24,6 @@ export class PurchasedListComponent implements OnInit {
 		this.purchasedListMessenger.emit(index);
 	}
 
-
 	constructor() { 
 
 	}
@@ -36,4 +32,3 @@ export class PurchasedListComponent implements OnInit {
 	}
 
 }
-// (productMessenger)="onDelete($event)"

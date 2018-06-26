@@ -1,10 +1,9 @@
 <h1>{{title}}</h1>
 <section id="purchased_list" >
 	<h2>Purchased List: <span>{{purchasedList.length}} items</span></h2>
-	<button (click)="showList()" class="showBtn">show</button>
-	<button (click)="hideList()" class="hideBtn">Hide</button>
-	
-	<app-purchased-list 
+	<button (click)="showList()">show</button>
+	<app-purchased-list
+	*ngIf='clicked' 
 	class="row"
 	[purchasedList]="purchasedList"
 	(purchasedListMessenger)="onDelete($event)">

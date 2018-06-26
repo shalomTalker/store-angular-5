@@ -7,24 +7,24 @@
     height: 40px;
 	text-align: center;
 }
-.hideBtn {
+/*.hideBtn {
 	display: none;
 
-}
-app-purchased-list, app-product-list {
-	display: flex;
+}*/
+app-product-list, app-purchased-list {
+	/*display: flex;*/
 	flex-wrap: wrap;
-	justify-content: center;
+	/*justify-content: center;*/
 	margin: 3rem;
 	 
 }
-.show {
+/*.show {
 	display: flex;
 
-}
-.hide {
+}*/
+/*.hide {
 	display: none
-}
-app-purchased-list {
+}*/
+/*app-purchased-list {
 	display: none;
-}
+}*/
