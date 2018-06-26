@@ -18,7 +18,7 @@ export class AppComponent {
 		{text: 'Scanner', price: 149.90 , image: '../../assets/img/Scanner.jpg'},
 		{text: 'Energy Drink', price: 4.90 , image: '../../assets/img/Energy Drink.jpg'},
 	];
-	
+
 	public clicked:boolean = false;
 
 	public addProduct():void {
@@ -40,20 +40,15 @@ export class AppComponent {
 	}
 	public showList(): void {
 		this.clicked = !this.clicked;
+		var buttonEl:HTMLButtonElement = document.querySelector('#purchased_list>button');
+		buttonEl.textContent = (buttonEl.textContent === 'Show') ? 'Hide' : 'Show';
+		// if (buttonEl.textContent === 'Show') {
+		// 	buttonEl.textContent = 'Hide';
+		// } else {
+		// 	buttonEl.textContent = 'Show'
+		// }
 	}
-	// public showList():any {
-	// 	var el :HTMLElement = document.querySelector('app-purchased-list')
-	// 		el.className += ' show'; 
-	// 		document.querySelector('.hideBtn').className = '';
-	// 		document.querySelector('.showBtn').className = 'hideBtn';
-	// }
-	// public hideList() :any {
-	// 	var el :HTMLElement = document.querySelector('app-purchased-list')
-	// 		el.className = ''; 
-	// 		document.querySelector('.hideBtn').className = 'showBtn';
-	// 		document.querySelector('.showBtn').nextElementSibling.className = 'hideBtn';
-
-	// }
+	
 	public add(index: number) :void {
 		var obj: Product = this.productList[index] 
 		this.purchasedList.push(obj);
